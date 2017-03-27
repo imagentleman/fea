@@ -3,7 +3,7 @@
     {
       "group": "HTML",
       "name": "My First Tag",
-      "folder": "my-first-Tag",
+      "folder": "my-first-tag",
       "baseHTML": "<style>body { font-family: sans-serif }</style>"
     },
     {
