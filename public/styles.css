@@ -31,9 +31,6 @@ iframe {
 p {
   margin-bottom: 1em;
 }
-/* Font title stack: Permanent Marker, Shadows into Light, VT323, Pacifico, Amatic SC, Cookie, Fedroka One, Sacramento*/
-
-/* Font copy stack: georgia, Cormorant Garamond, Lora, merriweather*/
 
 header {
   align-items: center;
@@ -175,7 +172,6 @@ header {
   justify-content: center;
   flex-direction: column;
   font-family: 'Loved by the King', cursive;
-  /* font-family: 'Lora', serif; */
 }
 
   .subject-title {
@@ -217,7 +213,7 @@ header {
   .reset-code {
     bottom: 1rem;
     color: #888;
-    font-family: Menlo, Monaco, Consolas,"Courier New", monospace;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
     position: absolute;
     right: 1rem;
     z-index: 1;
