@@ -1,0 +1,93 @@
+<!doctype html>
+
+<title>FEA - Front End Activities</title>
+
+<meta charset=utf-8>
+<meta content=IE=edge
+      http-equiv=X-UA-Compatible>
+<link href="/exercises/favicon.ico"
+      rel="icon">
+
+<link href=https://fonts.googleapis.com/css?family=Roboto:400,900|Lora|Loved+by+the+King
+      rel=stylesheet>
+
+<link href=styles.css
+      rel=stylesheet>
+
+<div id=app
+     v-cloak>
+  <header :class="{ blur: toc.open }">
+    <button class=toc-cta
+            v-on:click.prevent=toggleTOC>
+      <span class="logo">
+        <span class="logo-title">MENU - ACTIVITIES</span>
+      </span>
+    </button>
+
+    <span class="score">COMPLETED: {{ completedExercises }}/{{ exercises.length }}</span>
+  </header>
+
+  <div id=backdrop
+       v-show=toc.open
+       @click=checkTOC>
+  </div>
+
+  <aside id=toc
+         :class="{ active: toc.open }">
+    <button class=toc-cta
+            v-on:click.prevent=toggleTOC>
+      <span class="logo">
+        <span class="logo-title">MENU - ACTIVITIES</span>
+      </span>
+    </button>
+
+    <template v-for="key in Object.keys(toc.content)">
+      <h2 class=toc-group>{{ key }}</h2>
+
+      <ul class=toc-items
+          v-if=toc.content[key]>
+        <li class=toc-item
+            :class="{ active: exercise && ex.name === exercise.name }"
+            v-for="ex in toc.content[key]">
+          <a class=toc-link
+             href
+             @click.prevent=load(ex)>{{ ex.name }}</a>
+        </li>
+      </ul>
+    </template>
+  </aside>
+
+  <div id=subject
+       :class="{ blur: toc.open }"
+       v-html=subject>
+  </div>
+
+  <div id=explanation
+       :class="{ blur: toc.open }"
+       v-html=explanation>
+  </div>
+
+  <div id=workspace
+       :class="{ blur: toc.open }">
+    <a class=reset-code
+       href
+       @click.prevent=resetCode>Reset</a>
+    <div id=code></div>
+
+    <div id=preview>
+      <iframe allow-scripts></iframe>
+    </div>
+  </div>
+
+  <div id=result
+       :class="{ blur: toc.open, success: exercisePercentage === 100 }"
+       v-if=exerciseStats>
+    {{ exercisePercentage }}% completed ({{ exerciseStats.ok }} of {{ exerciseStats.total }} tests).
+  </div>
+</div>
+
+<script src=https://unpkg.com/vue@2/dist/vue.min.js></script>
+<script src=https://unpkg.com/localforage@1/dist/localforage.min.js></script>
+<script src=https://unpkg.com/monaco-editor@0/min/vs/loader.js></script>
+<script src=fittest.js></script>
+<script src=app.js></script>

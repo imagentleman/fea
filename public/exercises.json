@@ -1,0 +1,25 @@
+{
+  "exercises": [
+    {
+      "group": "HTML",
+      "name": "My First Tag",
+      "folder": "my-first-Tag",
+      "baseHTML": "<style>body { font-family: sans-serif }</style>"
+    },
+    {
+      "group": "HTML",
+      "name": "Iframes - Videos",
+      "folder": "iframe"
+    },
+    {
+      "group": "Javascript",
+      "name": "Print the numbers from 1 to 1000",
+      "folder": "1-1000"
+    },
+    {
+      "group": "Javascript",
+      "name": "A pyramid of 🍪s",
+      "folder": "pyramid"
+    }
+  ]
+}
