@@ -1,6 +1,8 @@
 # FEA
 Front End Activities: An interactive playground to learn about Front End
 
+![Screenshot](http://imagentleman.github.io/fea-screenshot.jpg)
+
 ## Demo
 https://imagentleman.github.io/fea/
 
